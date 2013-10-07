@@ -1,0 +1,21 @@
+<h1>Home Comes Here</h1>
+<% unless admin_signed_in? -%>
+    <div class="clearfix">
+      <div class="userAction span4 offset3">
+
+        <ul class="clearfix">
+          <li><%= link_to 'Sign up', new_admin_registration_path, class:"btn-large btn btn-success" %></li>
+          <li><%= link_to 'Sign in', new_admin_session_path, class:"btn-large btn" %></li>
+
+        </ul>
+
+      </div>
+    </div>
+<% end -%>
+
+<% if admin_signed_in? -%>
+    <%= link_to 'Logout', destroy_admin_session_url, :method=>'delete' %>
+    <h1>inside User Sign In</h1>
+
+
+<% end -%>

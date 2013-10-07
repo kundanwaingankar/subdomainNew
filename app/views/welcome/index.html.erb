@@ -1,0 +1,21 @@
+<h1>Welcome Here</h1>
+<% unless user_signed_in? -%>
+    <div class="clearfix">
+      <div class="userAction span4 offset3">
+
+        <ul class="clearfix">
+          <li><%= link_to 'Sign up', new_user_registration_path, class:"btn-large btn btn-success" %></li>
+          <li><%= link_to 'Sign in', new_user_session_path, class:"btn-large btn" %></li>
+
+        </ul>
+
+      </div>
+    </div>
+<% end -%>
+
+<% if user_signed_in? -%>
+    <%= link_to 'Logout', destroy_user_session_url, :method=>'delete' %>
+    <h1>inside User Sign In</h1>
+
+
+<% end -%>
